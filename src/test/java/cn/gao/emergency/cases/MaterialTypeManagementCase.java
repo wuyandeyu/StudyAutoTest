@@ -2,12 +2,10 @@ package cn.gao.emergency.cases;
 
 import cn.gao.emergency.api.BaseCase;
 
-import cn.gao.emergency.page.HomePage;
-import cn.gao.emergency.page.IndexPage;
-import cn.gao.emergency.page.LoginPage;
-import cn.gao.emergency.page.MaterialTypeManagementPage;
+import cn.gao.emergency.page.*;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -48,7 +46,10 @@ public class MaterialTypeManagementCase  extends BaseCase {
         HomePage homePage = login.login("zj_chaiqiaoyan", "Wuzixt0571@");
 
         System.out.println("test==============================================");
-        MaterialTypeManagementPage materialTypeManagementPage = (MaterialTypeManagementPage)homePage.clickMenu("物资类型管理");
+        RequirementFillingPage requirementFillingPage = (RequirementFillingPage)homePage.clickMenu("应急需求填报");
+        requirementFillingPage.js.executeScript("arguments[0].click()",requirementFillingPage.addButton);
+        driver.findElement(By.cssSelector("#materials > div > div:nth-child(5) > div.el-dialog__wrapper.el-dialog-box > div > div.el-dialog__body > div > form > div:nth-child(10) > div > div > div > div > input")).sendKeys("C:\\Users\\Administrator\\Desktop\\gao\\image\\1111.jpg");
+        driver.findElement(By.cssSelector("#materials > div > div:nth-child(5) > div.el-dialog__wrapper.el-dialog-box > div > div.el-dialog__body > div > form")).submit();
     }
     @Test
     @Story("跳转登录页")

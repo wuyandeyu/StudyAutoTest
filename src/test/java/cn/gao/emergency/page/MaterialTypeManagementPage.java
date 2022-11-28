@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 // page_url = http://192.168.1.149:8080/wztppt-web/center/newVueComponent?vue-emergency-materialGroupType
 public class MaterialTypeManagementPage implements Page {
 
-    JavascriptExecutor js;
+    public JavascriptExecutor js;
     @FindBy(id = "myviewIframe")
     public WebElement myviewiframeIframe;
 
@@ -60,7 +60,6 @@ public class MaterialTypeManagementPage implements Page {
         js.executeScript("arguments[0].click()",addTypeButton);
         PageFactory.initElements(driver, this);
         System.out.println(this.popupTypeWindow.getAttribute("style"));
-
         return new MaterialTypeManagementPage(driver);
     }
 

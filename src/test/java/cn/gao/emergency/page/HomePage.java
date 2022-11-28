@@ -39,7 +39,7 @@ public class HomePage implements Page{
             case "应急抢修任务管理" :  page =new MaterialTypeManagementPage(driver); break;
             case "应急队伍管理" :  page =new MaterialTypeManagementPage(driver);break;
             case "应急保障通讯录" :  page =new MaterialTypeManagementPage(driver);break;
-            case "应急任务填报管理" :  page =new MaterialTypeManagementPage(driver);break;
+            case "应急需求填报" :  page =new RequirementFillingPage(driver);break;
             default:page=new HomePage(driver);
         }
         return page;
